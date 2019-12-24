@@ -1,5 +1,0 @@
-package com.my_home.services.member;
-
-public class JdbcSignupServiceImpl {
-
-}

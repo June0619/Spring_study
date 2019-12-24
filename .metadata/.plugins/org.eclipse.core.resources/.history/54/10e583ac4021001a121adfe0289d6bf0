@@ -1,0 +1,10 @@
+package com.care.test02;
+
+public class PrintClass {
+
+	public void printFunc(int num1, int num2, String op, int result)
+	{
+		
+	}
+	
+}

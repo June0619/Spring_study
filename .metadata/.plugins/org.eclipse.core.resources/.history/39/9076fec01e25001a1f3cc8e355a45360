@@ -1,0 +1,18 @@
+package com.care.jdbc_dao;
+
+import java.sql.*;
+
+public class JdbcDAO {
+	private String driver = 
+			"oracle.jdbc.driver.OracleDriver";
+	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String user="jsp", pwd = "jsp";
+	private Connection con;
+	private PreparedStatement ps;
+	private ResultSet rs;
+	public JdbcDAO()
+	{
+		try { Class.forName(driver); }
+		catch (Exception e) { e.printStackTrace(); } 
+	}
+}

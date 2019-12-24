@@ -1,0 +1,8 @@
+package com.care.ex04;
+
+public class SubClass {
+	public void subFunc()
+	{
+		
+	}
+}

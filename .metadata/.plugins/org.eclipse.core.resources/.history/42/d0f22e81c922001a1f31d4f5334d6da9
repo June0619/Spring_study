@@ -1,0 +1,20 @@
+package com.care.ex04;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class QuizController04 {
+
+	@RequestMapping("ex04")
+	public String login()
+	{
+		return "redirect01/index";
+	}
+	@RequestMapping("loginChk")
+	public String loginChk()
+	{
+		
+		return "";
+	}
+}

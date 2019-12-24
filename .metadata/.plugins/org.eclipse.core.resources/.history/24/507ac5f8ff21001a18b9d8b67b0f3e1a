@@ -1,0 +1,10 @@
+package com.care.ex04;
+
+public class Controller01 implements Car{
+
+	@Override
+	public void speed() {
+		
+	}
+	
+}

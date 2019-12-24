@@ -1,0 +1,19 @@
+package com.care.controller;
+
+interface TestInter{
+	public void test();
+}
+
+public class test {
+	public static void main(String[] args) {
+		
+		TestInter a = ()->System.out.println("람다식 실행");
+		a.test();
+		/*TestInter a = new TestInter() {
+			public void test() {
+				System.out.println("인터페이스 실행");
+			}
+		};*/
+		
+	}
+}

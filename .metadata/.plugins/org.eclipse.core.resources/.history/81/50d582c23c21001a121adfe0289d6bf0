@@ -1,0 +1,8 @@
+package com.care.test01;
+
+public class PrintBean {
+
+	private String print;
+	private PrintString ps;
+	
+}

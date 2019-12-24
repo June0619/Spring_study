@@ -1,0 +1,45 @@
+package com.care.controller;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class CookieController {
+	
+	@RequestMapping("cookie")
+	public String myCookie(HttpServletResponse response,
+			HttpServletRequest request, Model model,
+	@CookieValue(value="myCookie", required=false) Cookie cook)
+	{
+		Cookie cookie = new Cookie("myCookie", "ÄíÅ°»ý¼º");
+		cookie.setMaxAge(60);
+		response.addCookie(cookie);
+		
+		Cookie[] ck = request.getCookies();
+		for(Cookie c : ck)
+			if(c.getName().equals("popup_off"))
+				System.out.println("111");
+				model.addAttribute("popup_off", true);
+		return "cookie";
+	}
+	@RequestMapping("popup")
+	public String popup()
+	{
+		return "popup";
+	}
+	@RequestMapping("popup_off")
+	public void popup_off(HttpServletResponse response)
+	{
+		System.out.println("11111");
+		Cookie cookie = new Cookie("popup_off", "true");
+		cookie.setMaxAge(100);
+		response.addCookie(cookie);
+	}
+	
+}

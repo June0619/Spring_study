@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="pc" class="com.care.ex03.PrintClass"/>
+	<bean id="sc" class="com.care.ex03.SaveClass">
+		<property name="pc" ref="pc"/>
+		<property name="name" value="zs"/>
+	
+		<!-- HashMap과 ArrayList 객체에 값을 초기화 하는 태그들 -->
+		<property name="hobby">
+			<list>
+				<value>영화</value>
+				<value>산책</value>
+			</list>
+		</property>
+		<property name="weather">
+			<map>
+				<entry key="오늘" value="맑음"/>
+				<entry key="내일" value="흐림"/>
+			</map>
+		</property>
+	</bean>
+	
+	<bean id="sc02" class="com.care.ex03.SaveClass">
+		<property name="pc" ref="pc"/>
+		<constructor-arg value="생성자 ZS"/>
+		<constructor-arg>
+			<list>
+				<value>생성자 코딩</value>
+				<value>생성자 운동</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="오늘" value="생성자 맑음"/>
+				<entry key="내일" value="생성자 흐림"/>
+			</map>
+		</constructor-arg>
+	</bean>
+		
+</beans>

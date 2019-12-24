@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="di"/>
+<aop-project name="test_jdbc"/>
+<aop-project name="cookie_session"/>
+<aop-project name="test_mvc"/>
+</aop-reference-model>

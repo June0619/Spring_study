@@ -1,0 +1,22 @@
+package com.my_home.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+	@RequestMapping("index")
+	public String home() {
+		return "index";
+	}
+	@RequestMapping("header")
+	public String header()
+	{
+		return "/layout/header";
+	}
+	@RequestMapping("footer")
+	public String footer()
+	{
+		return "/layout/footer";
+	}
+}

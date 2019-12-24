@@ -1,0 +1,8 @@
+<!-- pom.xml dependencies 태그 내에 위치 -->
+
+<!-- JDBC Template -->
+ <dependency>
+ 	<groupId>org.springframework</groupId>
+ 	<artifactId>spring-jdbc</artifactId>
+ 	<version>4.1.4.RELEASE</version>
+ </dependency>

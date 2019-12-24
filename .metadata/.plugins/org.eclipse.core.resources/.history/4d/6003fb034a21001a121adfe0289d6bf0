@@ -1,0 +1,40 @@
+package com.care.test02;
+
+import java.util.Scanner;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+
+		String path = "classpath:application_test02.xml";
+		
+		GenericXmlApplicationContext ctx =
+				new GenericXmlApplicationContext(path);
+		
+//		OperationClass oc = new OperationClass();
+//		PrintClass pc = new PrintClass();
+		SaveClass sc = ctx.getBean("sc", SaveClass.class);
+		
+		Scanner scanner = new Scanner(System.in);
+		int num1 = 0 , num2 = 0;
+		String op = null;
+		
+		System.out.print("숫자 1 > "); num1 = scanner.nextInt();
+		scanner.nextLine();
+		System.out.print("숫자 2 > "); num2 = scanner.nextInt();
+		scanner.nextLine();
+		System.out.print("연산(+, -, *, /) > "); op = scanner.nextLine();
+		
+//		sc.setOc(oc);
+//		sc.setPc(pc);
+		sc.setNum1(num1);
+		sc.setNum2(num2);
+		sc.setOp(op);
+		
+		sc.operationClass();
+		sc.printClass();
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.care.ex04;
+
+public class SubClass {
+	public void subFunc()
+	{
+		Car car = new Controller01();
+		System.out.println("서브 클래스 실행");
+		
+		car.speed();
+	}
+}

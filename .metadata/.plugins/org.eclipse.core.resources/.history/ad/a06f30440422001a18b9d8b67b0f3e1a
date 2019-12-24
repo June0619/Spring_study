@@ -1,0 +1,16 @@
+package com.care.quiz01;
+
+import java.util.ArrayList;
+
+public class StudentClass implements Student{
+	
+	String name;
+	ArrayList<String> food;
+	PrintClass pc;
+	
+	public void execute() {
+		
+	}
+
+	
+}

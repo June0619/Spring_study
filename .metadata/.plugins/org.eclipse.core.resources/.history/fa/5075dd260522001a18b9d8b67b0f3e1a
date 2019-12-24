@@ -1,0 +1,14 @@
+package com.care.quiz01;
+
+import java.util.ArrayList;
+
+public class PrintClass {
+	
+	public void print(String name, ArrayList<String> food)
+	{
+		System.out.println("name : " + name);
+		for(String i : food)
+			System.out.println("food : " + i);
+		
+	}
+}

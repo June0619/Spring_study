@@ -1,0 +1,11 @@
+package com.care.service;
+
+import org.springframework.ui.Model;
+
+public class JdbcSaveServiceImpl implements JdbcService {
+
+	@Override
+	public void execute(Model model) {
+		
+	}
+}

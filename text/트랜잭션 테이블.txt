@@ -1,0 +1,29 @@
+create table userticket(
+id varchar2(20),
+ticketnum number(2)
+);
+
+create table systemticket(
+id varchar2(20),
+ticketnum number(2),
+constraint constname check(ticketnum<5)
+);
+
+==================================================
+
+create table balance(
+num number,
+totmoney number(15),
+constraint contmoney check(totmoney>=0)
+);
+create table myaccount(
+num number,
+money number(15)
+);
+create table sysaccount(
+num number,
+money number(15)
+);
+insert into sysaccount values(1, 0);
+insert into myaccount values(1, 0);
+insert into balance values(1, 0);

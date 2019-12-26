@@ -24,3 +24,6 @@
 	- Spring 프로젝트 레포 정리
   	- jdbc connection xml로 처리 하는 방법(JDBC temlplate 사용)
   	- template 이용한 query 전송 (람다식 사용)
+* 2019-12-26
+	- transaction 처리
+	- 과제 (송금 처리 시스템 완성)

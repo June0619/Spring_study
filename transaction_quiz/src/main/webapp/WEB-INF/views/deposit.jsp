@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<div>입금할 금액 입력</div>
+<form action="save_deposit" method="post">
+<input type="text" name="deposit">
+<input type="hidden" name="num" value="${num }">
+<input type="submit" value="입금">
+</form>
 </body>
 </html>

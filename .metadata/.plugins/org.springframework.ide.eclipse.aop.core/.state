@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
 <aop-project name="di"/>
+<aop-project name="test_junit"/>
 <aop-project name="test_jdbc"/>
+<aop-project name="transaction_quiz"/>
+<aop-project name="transaction_01"/>
 <aop-project name="cookie_session"/>
 <aop-project name="test_mvc"/>
+<aop-project name="anot"/>
 </aop-reference-model>

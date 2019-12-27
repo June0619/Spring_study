@@ -27,3 +27,9 @@
 * 2019-12-26
 	- transaction 처리
 	- 과제 (송금 처리 시스템 완성)
+* 2019-12-27
+	- transaction_quiz 완성
+		- 계좌(num)간 송금 시스템 트랜잭션으로 구축 // 출금 계좌 잔액이 0 이하가 되는 처리 과정 rollback
+	- anotation(Auto Wired)
+			- context 설정 파일 간 객체 생성 후 anotation을 이용한 객체 주입
+			- IOC 개념

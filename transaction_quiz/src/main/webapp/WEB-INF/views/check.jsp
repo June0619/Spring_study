@@ -10,6 +10,8 @@
 </head>
 <body>
 (user)잔액 : ${user.totmoney} <br>
-(sys)잔액 : ${user.totmoney }
+(sys)잔액 : ${user.totmoney } <br>
+
+<a href="form">[메인으로 돌아가기]</a>
 </body>
 </html>

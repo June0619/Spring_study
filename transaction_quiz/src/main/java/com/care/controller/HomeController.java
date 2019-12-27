@@ -9,6 +9,8 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
@@ -17,27 +19,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.care.service.AccountCheckServiceImpl;
+import com.care.service.AccountDepositServiceImpl;
+import com.care.service.AccountSendServiceImpl;
 import com.care.service.AccountService;
+import com.care.service.AccountServiceImpl;
 import com.care.template.Constant;
 
 @Controller
 public class HomeController {
 	
 	AccountService as;
-	
-	public HomeController() {
-		String config = "classpath:applicationJDBC.xml";
-		GenericXmlApplicationContext ctx = 
-				new GenericXmlApplicationContext(config);
-		Constant.template = ctx.getBean("template", JdbcTemplate.class);
-	} 
-	
+	ApplicationContext app = ApplicationContextProvider.applicationContext;
 	@RequestMapping("form")
 	public String form()
 	{	
 		return "form";
 	}
-	
 	@RequestMapping("login")
 	public String login(HttpServletRequest request)
 	{
@@ -50,10 +47,18 @@ public class HomeController {
 	{
 		return "send";
 	}
+	@RequestMapping("send_save")
+	public String send_save(HttpServletRequest request, Model model)
+	{
+		model.addAttribute("request", request);
+		as = (AccountSendServiceImpl)app.getBean("accountSendServiceImpl");
+		as.execute(model);
+		return "redirect:form";
+	}
 	@RequestMapping("check")
 	public String check(Model model, HttpSession session)
 	{
-		as = new AccountCheckServiceImpl();
+		as = (AccountCheckServiceImpl)app.getBean("accountCheckServiceImpl");
 		model.addAttribute("num", session.getAttribute("num"));
 		as.execute(model);
 		return "check";
@@ -63,7 +68,14 @@ public class HomeController {
 	{
 		return "deposit";
 	}
-	
+	@RequestMapping("save_deposit")
+	public String save_deposit(HttpServletRequest request, Model model)
+	{
+		model.addAttribute("request", request);
+		as = (AccountDepositServiceImpl)app.getBean("accountDepositServiceImpl");
+		as.execute(model);
+		return "redirect:form";
+	}
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	@RequestMapping(value = "/", method = RequestMethod.GET)

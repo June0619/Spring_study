@@ -17,11 +17,13 @@
 		class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-
+	
+<!-- 
 	<bean name="dao" class="com.care.dao.AccountDAO">
 		<property name="template" ref="template" />
 		<property name="transactionTemplate" ref="transactionTemplate"/>
 	</bean>
+ -->
 
 	<bean name="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

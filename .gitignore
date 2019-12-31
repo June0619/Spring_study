@@ -4,4 +4,5 @@
 
 # Dricetories #
 
-/.metadata/
+\.metadata\
+.metadata\

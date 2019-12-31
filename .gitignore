@@ -5,5 +5,4 @@
 # Dricetories #
 
 \.metadata\
-.metadata\
-*.properties
+.metadata
